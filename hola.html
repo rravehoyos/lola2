@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ale</title>
+	<style>
+		.grande{
+			position: absolute;
+			top: 10px;
+			left:50px;
+			width: 1000px;
+			height: 600px;
+			background: red;
+		}
+		.crono{
+			position: absolute;
+			top: 10px;
+			left:350px;
+			width: 300px;
+			height: 100px;
+			background: yellow;
+			font-size: 80px;
+			color: white;
+			padding-left: 100px;
+			box-sizing: border-box;
+
+		}
+		.boto{
+			position: absolute;
+			top: 200px;
+			left:400px;
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			color: white;
+			padding-top: -60px;
+			padding-left: 10px;
+			font-size: 120px;
+			box-sizing: border-box;
+		}
+		.resu{
+			position: absolute;
+			top: 400px;
+			left:50px;
+			width: 850px;
+			height: 180px;
+			background: yellow;
+			color: white;
+			padding-left: 200px;
+			font-size: 120px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="grande">
+		<div class="crono" id="tiempo"></div>
+		<div class="boto" onclick="ale()" id="boton"></div>
+		<div class="resu" id="resultado"></div>
+	</div>
+	<script>
+		x=10;
+		tiempo.innerHTML=x;
+		function cronometro(){
+			if(x==0){
+				clearInterval(ricardo);
+				resultado.innerHTML="Perdiste!!"
+				boton.style.display="none";
+			}
+			else{
+				tiempo.innerHTML=x;
+				x=x-1;
+
+			}
+			if(num==10){
+				clearInterval(ricardo);
+				resultado.innerHTML="ganaste!!"
+				boton.style.display="none";
+			}
+
+		}
+			function ale(){
+		num = Math.floor((Math.random() * (16-1))+1);
+		boton.innerHTML=num;
+		}
+		ricardo=setInterval(cronometro,1000);
+	</script>
+
+
+
+
+</body>
+</html>
